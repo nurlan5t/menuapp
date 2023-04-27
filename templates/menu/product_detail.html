@@ -1,0 +1,11 @@
+{% extends 'menu/base.html' %}
+<title>{% block title %} Menu {% endblock %}</title>
+{% block content %}
+    <br>
+    <h3>{{ product_detail.title }}</h3>
+    <p>{{ product_detail.description }}</p>
+    <p>
+        <a href="{% url 'menu_detail' product_detail.category.menu.pk %}">{{ product_detail.category.menu }}</a> / {{ product_detail.category }}
+    </p>
+
+{% endblock %}

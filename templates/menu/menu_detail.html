@@ -1,0 +1,7 @@
+{% extends 'menu/base.html' %}
+<title>{% block title %} Menu {% endblock %}</title>
+{% block content %}
+    <br>
+    <h3>{{ menu_detail.title }}</h3>
+    <p>{{ menu_detail.description }}</p>
+{% endblock %}

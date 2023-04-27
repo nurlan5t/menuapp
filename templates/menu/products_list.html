@@ -1,0 +1,37 @@
+{% extends 'menu/base.html' %}
+<title>{% block title %} Products {% endblock %}</title>
+{% block content %}
+    {% if products_list %}
+        <br>
+        <ul>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Available</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Category / Menu</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for product in products_list %}
+                <tr>
+                  <th scope="row">{{ product.title }}</th>
+                  <td>{{ product.price }}</td>
+                  {% if product.available %}
+                      <td>Yes</td>
+                  {% else %}
+                      <td>No</td>
+                  {% endif %}
+                  <td><a href="{% url 'product_detail' product.pk %}" class="text-reset"> in more detail...</a></td>
+                <td>{{ product.category }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </ul>
+    {% else %}
+        <h2>No products!</h2>
+    {% endif %}
+{% endblock %}

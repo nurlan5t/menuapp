@@ -1,0 +1,22 @@
+{% extends 'menu/base.html' %}
+<title>{% block title %} Menu {% endblock %}</title>
+{% block content %}
+    {% if menus_list %}
+        <br>
+        {% for menu in menus_list %}
+            <a href="{% url 'menu_detail' menu.pk %}"><h3>{{ menu.title }}</h3></a>
+                <p>{{ menu.description }}</p>
+            <ul>
+            {% for category in menu.category_set.all %}
+                <li>
+                <h4>{{ category.title }}</h4>
+                <p>{{ category.description }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+            <br>
+        {% endfor %}
+    {% else %}
+        <h2>No Menus!</h2>
+    {% endif %}
+{% endblock %}
