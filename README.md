@@ -1,6 +1,6 @@
 # Tree Menu App
-Database diagram
-![alt text](https://ibb.co/mFM8k6c)
+Database diagram link:
+https://ibb.co/mFM8k6c
 
 ## Setup
 The first thing to do is to clone the repository:
